@@ -1,23 +1,68 @@
- <meta name="author" content="Ananth">
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale: 1.0">
+    <meta name="author" content="Ananth">
     <meta name="description" content="GLTF/GLB file viewer with 3D model loading from files or URLs">
     <title>3D Viewer - GLTF/GLB Loader</title>
-    <link rel="stylesheet" href="./Style.css">
-
+    <link rel="stylesheet" href="/Style.css">
+    
     <!-- Three.js library for 3D graphics -->
-    <script src="./three.min.js"></script>
+    <script src="/three.min.js"></script>
+
+
 
     <!-- Three.js GLTF model loader -->
-    <script src="./GLTFLoader.js"></script>
+    <script src="/GLTFLoader.js"></script>
 
     <!-- Three.js orbit camera controls for mouse interaction -->
-    <script src="./OrbitControls.js"></script>
+    <script src="/OrbitControls.js"></script>
 </head>
 <body>
 
-@@ -64,6 +64,6 @@
+    <!-- Main container with flex layout: left panel (controls) and right panel (viewer) -->
+    <div id="container">
+        
+        <!-- LEFT PANEL: File upload and URL loading controls -->
+        <div id="upload-container">
+            
+            <!-- File Upload Section -->
+            <label for="file-input"><strong>Upload 3D Model (GLTF/GLB):</strong></label>
+            <button id="file-button">Choose File</button>
+            <input type="file" id="file-input" accept=".gltf,.glb">
+
+            <!-- Loading Indicator: Shows while model is being processed -->
+            <div id="loading-indicator">Loading model...</div>
+
+            <!-- File Information Display -->
+            <div id="file-info">
+                <span id="file-name">No file selected</span><br>
+                <span id="file-size">File size: N/A</span>
+            </div>
+
+            <!-- URL Loading Section: Load models from a web URL -->
+            <div id="url-load-section">
+                <label for="url-input"><strong>Or Load from URL:</strong></label>
+                <input 
+                    type="text" 
+                    id="url-input" 
+                    placeholder="Enter model URL (e.g., https://example.com/model.glb)"
+                    title="Enter the full URL to your GLTF or GLB model file"
+                >
+                <button id="load-url-button">Load from URL</button>
+            </div>
+
+            <!-- View Options: Different rendering modes -->
+            <div id="view-options">
+                <button id="solid-view" title="Display model with solid colors">Solid View</button>
+                <button id="textured-view" title="Display model with original textures">Textured View</button>
+                <button id="wireframe-view" title="Display model as wireframe">Wireframe View</button>
+            </div>
+        </div>
+
+        <!-- RIGHT PANEL: 3D viewer canvas container -->
+        <div id="viewer-container"></div>
     </div>
 
     <!-- Main application script -->
-    <script src="./script.js"></script>
+    <script src="/script.js"></script>
 </body>
 </html>
