@@ -1,108 +1,203 @@
-	body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            display: flex;
-            height: 100vh;
-            overflow: hidden;
-        }
+/* ============================================
+   GENERAL BODY STYLING
+   ============================================ */
 
-        #container {
-            display: flex;
-            width: 100%;
-            height: 100%;
-        }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
 
-        #upload-container {
-            width: 30%;
-            padding: 20px;
-            box-sizing: border-box;
-            background-color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
+/* ============================================
+   MAIN CONTAINER LAYOUT
+   ============================================ */
 
-        #file-button {
-            padding: 12px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border: 2px solid #4CAF50;
-            background-color: #f4f4f4;
-            color: #4CAF50;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
+/* Main flex container for left and right panels */
+#container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
 
-        #file-button:hover {
-            background-color: #4CAF50;
-            color: white;
-            border-color: #45a049;
-        }
+/* ============================================
+   LEFT PANEL: UPLOAD & CONTROLS
+   ============================================ */
 
-        #file-input {
-            display: none;
-        }
+/* Left sidebar containing upload controls and view options */
+#upload-container {
+    width: 30%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
 
-        #loading-indicator {
-            display: none;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 18px;
-            color: #333;
-            background-color: rgba(255, 255, 255, 0.7);
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+/* Choose File button styling */
+#file-button {
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 2px solid #4CAF50;
+    background-color: #f4f4f4;
+    color: #4CAF50;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    margin: 10px 0;
+}
 
-        #file-info {
-            margin-top: 20px;
-            text-align: center;
-        }
+/* Hover effect for file button */
+#file-button:hover {
+    background-color: #4CAF50;
+    color: white;
+    border-color: #45a049;
+}
 
-        #file-info span {
-            font-size: 14px;
-            color: #333;
-        }
+/* Hidden file input element (triggered by button click) */
+#file-input {
+    display: none;
+}
 
-        #viewer-container {
-            width: 70%;
-            height: 100%;
-            background-color: #eeeeee;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 2px solid black;
-            box-sizing: border-box;
-            margin: 40px;
-        }
+/* ============================================
+   URL LOADING SECTION
+   ============================================ */
 
-        canvas {
-            width: 100%;
-            height: 100%;
-        }
+/* Container for URL input and load button */
+#url-load-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
 
-        #view-options {
-            display: flex;
-            flex-direction: column;
-            margin-top: 20px;
-        }
+/* URL input field styling */
+#url-input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
 
-        #view-options button {
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #4CAF50;
-            background-color: #f4f4f4;
-            color: #4CAF50;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+/* Load from URL button styling */
+#load-url-button {
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    border: 2px solid #2196F3;
+    background-color: #f4f4f4;
+    color: #2196F3;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
 
-        #view-options button:hover {
-            background-color: #4CAF50;
-            color: white;
-        }
+/* Hover effect for URL load button */
+#load-url-button:hover {
+    background-color: #2196F3;
+    color: white;
+    border-color: #0b7dda;
+}
+
+/* ============================================
+   LOADING INDICATOR
+   ============================================ */
+
+/* Loading message displayed during model parsing */
+#loading-indicator {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+/* ============================================
+   FILE INFORMATION DISPLAY
+   ============================================ */
+
+/* Container for file name and size info */
+#file-info {
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+/* File info text styling */
+#file-info span {
+    font-size: 14px;
+    color: #333;
+    display: block;
+    margin: 5px 0;
+}
+
+/* ============================================
+   VIEW OPTIONS BUTTONS
+   ============================================ */
+
+/* Container for view mode buttons (Solid, Textured, Wireframe) */
+#view-options {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 100%;
+    gap: 10px;
+}
+
+/* Individual view option button styling */
+#view-options button {
+    padding: 10px;
+    border: 1px solid #4CAF50;
+    background-color: #f4f4f4;
+    color: #4CAF50;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+/* Hover effect for view option buttons */
+#view-options button:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* ============================================
+   RIGHT PANEL: 3D VIEWER
+   ============================================ */
+
+/* Right panel containing the 3D viewer canvas */
+#viewer-container {
+    width: 70%;
+    height: 100%;
+    background-color: #eeeeee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    box-sizing: border-box;
+    margin: 40px;
+    position: relative;
+}
+
+/* Canvas element fills the viewer container */
+canvas {
+    width: 100%;
+    height: 100%;
+}
