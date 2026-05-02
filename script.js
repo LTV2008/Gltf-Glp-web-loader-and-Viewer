@@ -41,7 +41,7 @@ const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
 directionalLight.position.set(5, 10, 7.5);
 scene.add(directionalLight);
 
-// ========================================================script
+// ========================================================
 // GLOBAL STATE VARIABLES
 // ========================================================
 // Track loaded model and its materials for switching view modes
@@ -257,7 +257,7 @@ document.getElementById('textured-view').addEventListener('click', function () {
 });
 
 // ========================================================
-// VIEW MODE HANDLERS - WIREFRAME VIEWscript
+// VIEW MODE HANDLERS - WIREFRAME VIEW
 // ========================================================
 // Display model as wireframe for structure visualization
 
