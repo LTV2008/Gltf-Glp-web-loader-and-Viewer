@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale: 1.0">
+    <meta name="author" content="Ananth">
+    <meta name="description" content=" Gltf\Glp file in Web 3dView">
+    <title>3D Viewer</title>
+    <link rel="stylesheet" href="WebFile/Base/Style.css">
+    <script src="WebFile/Base/three.min.js"></script>
+    <script src="WebFile/Base/GLTFLoader.js"></script>
+    <script src="WebFile/Base/OrbitControls.js"></script>
+    
+    
+</head>
+<body>
+
+    <div id="container">
+        <div id="upload-container">
+            <label for="file-input">Upload your 3D model (GLTF/GLB):</label>
+            <button id="file-button">Choose File</button>
+            <input type="file" id="file-input" accept=".gltf,.glb">
+
+            <div id="loading-indicator">Uploading model...</div>
+
+            <div id="file-info">
+                <span id="file-name">No file selected</span><br>
+                <span id="file-size">File size: N/A</span>
+            </div>
+
+            <div id="view-options">
+                <button id="solid-view">Solid View</button>
+                <button id="textured-view">Textured View</button>
+                <button id="wireframe-view">Wireframe View</button>
+            </div>
+        </div>
+
+        <div id="viewer-container"></div>
+    </div>
+    <script src="WebFile/Base/script.js"></script>
+</body>
+</html>
+
